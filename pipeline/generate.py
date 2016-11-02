@@ -44,7 +44,7 @@ def wrangle(raw_data):
                 else:
                     response[q + '_num'] = None
             elif q == 'educ':
-                response[q + '_num'] = mapGender.get(a)
+                response[q + '_num'] = mapEduc.get(a)
             elif q == 'current' or q == 'abandoned':
                 response[q + '_category'] = mapApp.get(a)
             elif re.match('current_', q) or re.match('abandoned_', q):
