@@ -5,7 +5,7 @@ date: "November 2, 2016"
 output: html_document
 ---
 
-```{r Preliminaries, results = "hide", message = FALSE, warning = FALSE}
+```{r Preliminaries, results = "hide", message = FALSE, warning = FALSE, echo=FALSE}
 
 library(ggplot2)
 library(dplyr)
@@ -13,6 +13,7 @@ library(tidyr)
 library(readr)
 library(knitr)
 library(plyr)
+library(nFactors) # factor analysis
 
 
 summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
@@ -35,11 +36,9 @@ summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
 
 ```
 
-# Load Data
+```{r, echo=FALSE}
 
-Read in pilot data.
-
-```{r}
+# Read in pilot data.
 
 data <- read.csv("/Users/Katie/Desktop/Stanford/2016-17 Fall/CS 376 HCI Research/Benefit_Burden/benefit_burden/pilot/data/2016-11-01_pilot_survey_responses.csv")
 
@@ -60,7 +59,7 @@ data[[i]] = factor(data[[i]], levels = c("Never", "A little bit of the time", "S
 
 # Demographics
 
-```{r, message = FALSE}
+```{r, message = FALSE, echo=FALSE}
 
 qplot(gender, data=data)
 qplot(from, data=data)
@@ -75,7 +74,7 @@ qplot(usage, data=data)
 
 ## Currently used app
 
-```{r, fig.width=10, fig.height=6, warning = FALSE}
+```{r, fig.width=10, fig.height=6, warning = FALSE, echo=FALSE}
 
 current_summ = summarySE(data, groupvars=c("current_category"), measurevar="current_benefit_score")
 
@@ -94,7 +93,7 @@ ggplot(data=current_summ, #[current_summ$N > 5,]
 
 ## Abandoned app
 
-```{r, fig.width=10, fig.height=6, warning = FALSE}
+```{r, fig.width=10, fig.height=6, warning = FALSE, echo=FALSE}
 
 abandoned_summ = summarySE(data, groupvars=c("abandoned_category"), measurevar="abandoned_benefit_score")
 
