@@ -1,3 +1,4 @@
-raw_data/*
+pilot/raw_data/*
+mturk/raw_data/*
 *.pyc
 *.html

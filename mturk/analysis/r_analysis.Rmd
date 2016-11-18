@@ -1,7 +1,7 @@
 ---
-title: "Benefit and Burden: Pilot Data Analysis"
+title: "Benefit and Burden: MTurk Data Analysis"
 author: "Katie Cheng"
-date: "November 2, 2016"
+date: "November 18, 2016"
 output: html_document
 ---
 
@@ -40,7 +40,7 @@ summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
 
 # Read in pilot data.
 
-data <- read.csv("/Users/Katie/Desktop/Stanford/2016-17 Fall/CS 376 HCI Research/Benefit_Burden/benefit_burden/pilot/data/2016-11-07_pilot_survey_responses.csv")
+data <- read.csv("/Users/Katie/Desktop/Stanford/2016-17 Fall/CS 376 HCI Research/Benefit_Burden/benefit_burden/mturk/raw_data/2016-11-07_pilot_survey_responses.csv")
 
 items = names(data)[
 intersect(
